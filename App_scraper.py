@@ -23,8 +23,6 @@ for job_elem in job_elems:
     title_elem = job_elem.find('h2', class_='title')
     company_elem = job_elem.find('div', class_='company')
     location_elem = job_elem.find('div', class_='location')
-    # salary_elem = job_elem.find('div', 'span', class_='name')
-    # apply_link = job_elem.find('a', id_='PrimaryJobApply')
     if None in (title_elem, company_elem, location_elem):
         continue
     print(title_elem.text.strip())
