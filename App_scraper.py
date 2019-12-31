@@ -1,11 +1,8 @@
-# The Code displayed works for static HTML content
 import requests
 from bs4 import BeautifulSoup
 
 url = 'https://www.monster.co.uk/jobs/search/?q=Software-Engineer&where=London__2C-London&client=power&cy=uk&rad=20&intcid=swoop_Hero_Search'
 page = requests.get(url)
-
-# This code performs a HTTP request to the given URL, retrieving data that the server sends back and stores that data in a python object
 
 soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find(id='ResultsContainer')
@@ -29,7 +26,3 @@ for job_elem in job_elems:
     print(company_elem.text.strip())
     print(location_elem.text.strip())
     print()
-
-# This section of code finds webpage elements through HTML class names
-# Adding .text to a beautiful soup object returns only text HTML elements
-
